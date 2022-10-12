@@ -11,7 +11,15 @@ The "Job" section:
 **/
 const jobRole = document.getElementById("title");
 const otherJobField = document.getElementById("other-job-role");
+otherJobField.style.display = 'none';
 
+jobRole.addEventListener('change', (event) => {
+  if (event.target.value === 'other') {
+    otherJobField.style.display = "block";
+  } else {
+    otherJobField.style.display = "none";
+  }
+});
 
 /**
 The "T-Shirt Info" section:
