@@ -11,3 +11,35 @@ The "Job" section:
 **/
 const jobRole = document.getElementById("title");
 const otherJobField = document.getElementById("other-job-role");
+
+
+/**
+The "T-Shirt Info" section:
+  The "Color" menu should be disabled by default and then enabled once the T-shirt theme is selected.
+  The color options need to be displayed and hidden based on the theme selected.
+**/
+
+
+
+
+/**
+The "Register for Activities" section:
+  As the user selects activities, the total cost should update and display on the form in real time.
+**/
+
+
+
+
+/**
+The "Payment Info" section:
+  The credit card payment should be displayed by default, while payment methods of Paypal and Bitcoin are hidden.
+  As users select payment methods from the drop-down menu, the other options should be hidden.
+**/
+
+
+
+
+/**
+The "Form Validation" section:
+  Users should not be allowed to submit the form if one or more required fields/sections are left empty or filled out incorrectly.
+**/
