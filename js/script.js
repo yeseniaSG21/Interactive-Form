@@ -30,12 +30,12 @@ The "T-Shirt Info" section:
 
 
 
+
+
 /**
 The "Register for Activities" section:
   As the user selects activities, the total cost should update and display on the form in real time.
 **/
-
-
 
 
 /**
@@ -45,16 +45,11 @@ The "Payment Info" section:
 **/
 
 
-
-
 /**
 The "Form Validation" section:
   Users should not be allowed to submit the form if one or more required fields/sections are left empty or filled out incorrectly.
   When the submit button is clicked, the form should submit if correctly filled out and refresh all fields.
 **/
-
-
-
 
 
 /**
