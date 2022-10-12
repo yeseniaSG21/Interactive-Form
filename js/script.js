@@ -65,9 +65,33 @@ allActivities.addEventListener('change', (event) => {
 
 /**********
   The "Payment Info" section:
-    The credit card payment should be displayed by default, while payment methods of Paypal and Bitcoin are hidden.
+    The credit card payment should be displayed by default, while payment methods of PayPal and Bitcoin are hidden.
     As users select payment methods from the drop-down menu, the other options should be hidden.
 **********/
+const paymentMethod = document.getElementById('payment');
+const creditCard = document.getElementById('credit-card');
+const paypal = document.getElementById('paypal');
+const bitcoin = document.getElementById('bitcoin');
+
+paypal.style.display = 'none';
+bitcoin.style.display = 'none';
+paymentMethod.children[1].setAttribute('selected', true);
+
+paymentMethod.addEventListener("change", (event) => {
+  if (event.target.value === 'paypal') {
+    paypal.style.display = 'block';
+    creditCard.style.display = 'none';
+    bitcoin.style.display = 'none';
+  } else if (event.target.value === 'bitcoin') {
+    bitcoin.style.display = 'block';
+    paypal.style.display = 'none';
+    creditCard.style.display = 'none';
+  } else {
+    creditCard.style.display = 'block';
+    paypal.style.display = 'none';
+    bitcoin.style.display = 'none';
+  }
+});
 
 /**********
   The "Form Validation" section:
