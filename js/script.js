@@ -7,7 +7,7 @@ const name = document.getElementById("name").focus();
 /**
 The "Job" section:
   The form should hide the "Other job role" field when a role from the dropdown menu is chosen.
-  If "Other job role" is chosen, the field to write in another role should display.
+  If "Other" is chosen, the field to write in another role should display.
 **/
 const jobRole = document.getElementById("title");
 const otherJobField = document.getElementById("other-job-role");
@@ -53,5 +53,5 @@ The "Form Validation" section:
 The "Accessibility" section:
   Improve accessibilities so features can receieve styling as user interact with the form.
   As "Register for Activities" are checkboxed, the respective selection should be in focus.
-  When invalid errors on fields/sections, the corresponding field will be highlighted. 
+  When invalid errors on fields/sections, the corresponding field will be highlighted.
 **/
