@@ -46,13 +46,22 @@ shirtDesign.addEventListener('change', (event) => {
 
 /**********
   The "Register for Activities" section:
-    As the user selects activities, the total cost should update and display on the form in real time.
+    As the user selects activities, the cost of the activities should total and display on the form in real time.
 **********/
+const allActivities = document.getElementById('activities-box');
+const cost = document.getElementById('activities-cost');
+let totalCost = 0;
 
+allActivities.addEventListener('change', (event) => {
+  let activityCost = +(event.target.getAttribute('data-cost'));
+  if (event.target.checked) {
+    totalCost += activityCost;
+  } else {
+    totalCost -= activityCost;
+  }
 
-
-
-
+  cost.innerHTML = `Total: $${totalCost}`;
+});
 
 /**********
   The "Payment Info" section:
