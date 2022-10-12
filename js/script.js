@@ -23,17 +23,36 @@ jobRole.addEventListener('change', (event) => {
 
 /*****
   The "T-Shirt Info" section:
-    The "Color" menu should be disabled by default and then enabled once the T-shirt theme is selected.
+    The "Color" menu should be disabled by default and then enabled once the T-shirt design theme is selected.
     The color options need to be displayed and hidden based on the theme selected.
 *****/
 const shirtDesign = document.getElementById('design');
 const shirtColor = document.getElementById('color');
+shirtColor.disabled = true;
+const designTheme = shirtColor.children;
 
+shirtDesign.addEventListener('change', (event) => {
+  shirtColor.disabled = false;
+  for (let i=0; i < designTheme.length; i++) {
+    if (event.target.value === designTheme[i].getAttribute('data-theme')) {
+      designTheme[i].hidden = false;
+      designTheme[i].setAttribute('selected', true);
+    } else {
+      designTheme[i].hidden = true;
+      designTheme[i].removeAttribute('selected');
+    }
+  }
+});
 
 /*****
   The "Register for Activities" section:
     As the user selects activities, the total cost should update and display on the form in real time.
 *****/
+
+
+
+
+
 
 /*****
   The "Payment Info" section:
@@ -62,9 +81,7 @@ function isEmailValid(){
 }
 
 //Validate "Register for Activities"
-function isRegisterValid() {
-  ...
-}
+      //function isRegisterValid() {}
 
 //Validate "Card Number" to contain 13-16 digits
 const card = document.getElementById('cc-num');
