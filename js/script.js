@@ -1,14 +1,14 @@
-/*****
+/**********
   The "Name" field:
     When page loads, curser should focus on the "name" field.
-*****/
+**********/
 const name = document.getElementById("name").focus();
 
-/*****
+/**********
   The "Job" section:
     The form should hide the "Other job role" field when a role from the dropdown menu is chosen.
     If "Other" is chosen, the field to write in another role should display.
-*****/
+**********/
 const jobRole = document.getElementById("title");
 const otherJobField = document.getElementById("other-job-role");
 otherJobField.style.display = 'none';
@@ -21,11 +21,11 @@ jobRole.addEventListener('change', (event) => {
   }
 });
 
-/*****
+/**********
   The "T-Shirt Info" section:
     The "Color" menu should be disabled by default and then enabled once the T-shirt design theme is selected.
     The color options need to be displayed and hidden based on the theme selected.
-*****/
+**********/
 const shirtDesign = document.getElementById('design');
 const shirtColor = document.getElementById('color');
 shirtColor.disabled = true;
@@ -44,10 +44,10 @@ shirtDesign.addEventListener('change', (event) => {
   }
 });
 
-/*****
+/**********
   The "Register for Activities" section:
     As the user selects activities, the total cost should update and display on the form in real time.
-*****/
+**********/
 
 
 
