@@ -54,17 +54,17 @@ shirtDesign.addEventListener('change', (event) => {
 
 
 
-/*****
+/**********
   The "Payment Info" section:
     The credit card payment should be displayed by default, while payment methods of Paypal and Bitcoin are hidden.
     As users select payment methods from the drop-down menu, the other options should be hidden.
-*****/
+**********/
 
-/*****
+/**********
   The "Form Validation" section:
     Users should not be allowed to submit the form if one or more required fields/sections are left empty or filled out incorrectly.
     When the submit button is clicked, the form should submit if correctly filled out and refresh all fields.
-*****/
+**********/
 
 //Validate "Name" field to only contain letters
 function isNameValid() {
@@ -107,9 +107,9 @@ function isCvvValid() {
   return /^\d{3}$/.test(cvvInput);
 }
 
-/*****
+/**********
   The "Accessibility" section:
     Improve accessibilities so features can receieve styling as user interact with the form.
     As "Register for Activities" are checkboxed, the respective selection should be in focus.
     When invalid errors on fields/sections, the corresponding field will be highlighted.
-*****/
+**********/
