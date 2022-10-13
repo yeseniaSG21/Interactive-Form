@@ -97,24 +97,33 @@ paymentMethod.addEventListener("change", (event) => {
   The "Form Validation" section:
     Users should not be allowed to submit the form if one or more required fields/sections are left empty or filled out incorrectly.
     When the submit button is clicked, the form should submit if correctly filled out and refresh all fields.
+    Regex format referenced from stackoverflow and codexworld
 **********/
+const form = document.querySelector('form');
 
 //Validate "Name" field to only contain letters
+const name = document.getElementById('name');
+
 function isNameValid() {
   let nameInput = name.value;
-  return /^[a-zA-Z]+$/.test(nameInput);
+  return /^[a-zA-Z]+ [a-zA-Z]+$/.test(nameInput);
 }
 
 //Validate "Email" field to contain letters and digits in email form
 const email = document.getElementById('email');
 
-function isEmailValid(){
+function isEmailValid() {
   let emailInput = email.value;
   return /^[^@]+@[^@.]+\.[a-z]+$/i.test(emailInput);
 }
 
 //Validate "Register for Activities"
-      //function isRegisterValid() {}
+const allActivities = document.getElementById('activities-box');
+
+function isRegisterValid() {
+  let registerValid = totalCost > 0;
+  return registerValid;
+}
 
 //Validate "Card Number" to contain 13-16 digits
 const card = document.getElementById('cc-num');
@@ -129,7 +138,7 @@ const zipCode = document.getElementById('zip');
 
 function isZipCodeValid() {
   let zipInput = zipCode.value;
-  return /^\d{5}$/.test(zipInput);
+  return /^\d{5} ?$/.test(zipInput);
 }
 
 //Validate "CVV" to contain 3 digits
@@ -137,7 +146,7 @@ const cvv = document.getElementById('cvv');
 
 function isCvvValid() {
   let cvvInput = cvv.value;
-  return /^\d{3}$/.test(cvvInput);
+  return /^\d{3} ?$/.test(cvvInput);
 }
 
 /**********
@@ -146,3 +155,13 @@ function isCvvValid() {
     As "Register for Activities" are checkboxed, the respective selection should be in focus.
     When invalid errors on fields/sections, the corresponding field will be highlighted.
 **********/
+const activitySelect = document.querySelectorAll('input [type="checkbox"]');
+
+for (let i=0; i < activitySelect.length; i++) {
+  activitySelect[i].addEventListener('focus', (event) => {
+    event.target.parentElement.classList.add('focus');
+  })
+  activitySelect[i].addEventListener('blur', (event) => {
+    event.target.parentElement.classList.remove('focus');
+  })
+}
