@@ -2,7 +2,7 @@
   The "Name" field:
     When page loads, curser should focus on the "name" field.
 **********/
-const name = document.getElementById("name").focus();
+document.getElementById("name").focus();
 
 /**********
   The "Job" section:
@@ -100,54 +100,58 @@ paymentMethod.addEventListener("change", (event) => {
     Regex format referenced from stackoverflow and codexworld
 **********/
 const form = document.querySelector('form');
+const name = document.getElementById('name');
+const email = document.getElementById('email');
+const card = document.getElementById('cc-num');
+const zipCode = document.getElementById('zip');
+const cvv = document.getElementById('cvv');
 
 //Validate "Name" field to only contain letters
-const name = document.getElementById('name');
-
 function isNameValid() {
   let nameInput = name.value;
   return /^[a-zA-Z]+ [a-zA-Z]+$/.test(nameInput);
 }
 
 //Validate "Email" field to contain letters and digits in email form
-const email = document.getElementById('email');
-
 function isEmailValid() {
   let emailInput = email.value;
   return /^[^@]+@[^@.]+\.[a-z]+$/i.test(emailInput);
 }
 
 //Validate "Register for Activities"
-const allActivities = document.getElementById('activities-box');
-
 function isRegisterValid() {
   let registerValid = totalCost > 0;
   return registerValid;
 }
 
 //Validate "Card Number" to contain 13-16 digits
-const card = document.getElementById('cc-num');
-
 function isCardNumberValid() {
   let cardInput = card.value;
   return /^\d{13,16}$/.test(cardInput);
 }
 
 //Validate "Zip code" to contain 5 digits
-const zipCode = document.getElementById('zip');
-
 function isZipCodeValid() {
   let zipInput = zipCode.value;
   return /^\d{5} ?$/.test(zipInput);
 }
 
 //Validate "CVV" to contain 3 digits
-const cvv = document.getElementById('cvv');
-
 function isCvvValid() {
   let cvvInput = cvv.value;
   return /^\d{3} ?$/.test(cvvInput);
 }
+
+//Add an event listener to prevent invalid information from submitting the form
+form.addEventListener('submit', (event) => {
+  if (!isNameValid()){
+    event.p
+  }
+
+})
+
+
+
 
 /**********
   The "Accessibility" section:
@@ -155,7 +159,7 @@ function isCvvValid() {
     As "Register for Activities" are checkboxed, the respective selection should be in focus.
     When invalid errors on fields/sections, the corresponding field will be highlighted.
 **********/
-const activitySelect = document.querySelectorAll('input [type="checkbox"]');
+const activitySelect = document.querySelectorAll('input[type="checkbox"]');
 
 for (let i=0; i < activitySelect.length; i++) {
   activitySelect[i].addEventListener('focus', (event) => {
