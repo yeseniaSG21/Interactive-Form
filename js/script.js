@@ -186,21 +186,20 @@ form.addEventListener('submit', (event) => {
     } else {
       validField(card);
     }
+    if( !isZipCodeValid() ) {
+        event.preventDefault();
+        invalidField(zipCode);
+      } else {
+        validField(zipCode);
+      }
+
+    if ( !isCvvValid() ) {
+        event.preventDefault();
+        invalidField(cvv);
+      } else {
+        validField(cvv);
+      }
   }
-
-  if( !isZipCodeValid() ) {
-      event.preventDefault();
-      invalidField(zipCode);
-    } else {
-      validField(zipCode);
-    }
-
-  if ( !isCvvValid() ) {
-      event.preventDefault();
-      invalidField(cvv);
-    } else {
-      validField(cvv);
-    }
 });
 
 /**********
