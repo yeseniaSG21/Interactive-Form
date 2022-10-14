@@ -142,17 +142,65 @@ function isCvvValid() {
   return /^\d{3} ?$/.test(cvvInput);
 }
 
+//function testing invalid fields
+function invalidField(input) {
+  input.parentElement.classList.add('not-valid');
+  input.parentElement.classList.remove('valid');
+  input.nextElementSibling.style.display = 'block';
+}
+
+//function testing if field is valid
+function validField(input) {
+  input.parentElement.classList.add('valid');
+  input.parentElement.classList.remove('not-valid');
+  input.nextElementSibling.style.display = 'none';
+}
+
 //Add an event listener to prevent invalid information from submitting the form
 form.addEventListener('submit', (event) => {
-  if ( !isNameValid() || !isEmailValid() || !isRegisterValid() || !isCardNumberValid() || !isZipCodeValid() || !isCvvValid() ){
+  if ( !isNameValid() || nameInput = '') {
     event.preventDefault();
-    event.value.parentElement.classList.add('not-valid');
-    event.value.parentElement.classList.remove('valid');
-    event.value.nextElementSibling.style.display = 'block';
+    invalidField(name);
   } else {
-    event.value.parentElement.classList.add('valid');
-    event.value.parentElement.classList.remove('not-valid');
-    event.value.nextElementSibling.style.display = 'none';
+    validField(name);
+  }
+
+  if( !isEmailValid() ) {
+    event.preventDefault();
+    invalidField(email);
+  } else {
+    validField(email);
+  }
+
+  if( !isRegisterValid() ) {
+
+  } else {
+
+  }
+
+  if( paymentMethod.value === "credit-card") {
+    if( !isCardNumberValid() ) {
+      event.preventDefault();
+      invalidField(card);
+    } else {
+      validField(card);
+    }
+  }
+
+  if( !isZipCodeValid() ) {
+      event.preventDefault();
+      invalidField(zipCode);
+    } else {
+      validField(zipCode);
+    }
+  }
+
+  if ( !isCvvValid() ) {
+      event.preventDefault();
+      invalidField(cvv);
+    } else {
+      validField(cvv);
+    }
   }
 });
 
