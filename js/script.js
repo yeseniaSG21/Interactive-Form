@@ -158,7 +158,7 @@ function validField(input) {
 
 //Add an event listener to prevent invalid information from submitting the form
 form.addEventListener('submit', (event) => {
-  if ( !isNameValid() || nameInput = '') {
+  if ( !isNameValid() ) {
     event.preventDefault();
     invalidField(name);
   } else {
@@ -193,7 +193,6 @@ form.addEventListener('submit', (event) => {
     } else {
       validField(zipCode);
     }
-  }
 
   if ( !isCvvValid() ) {
       event.preventDefault();
@@ -201,7 +200,6 @@ form.addEventListener('submit', (event) => {
     } else {
       validField(cvv);
     }
-  }
 });
 
 /**********
