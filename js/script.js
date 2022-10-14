@@ -109,7 +109,7 @@ const cvv = document.getElementById('cvv');
 //Validate "Name" field to only contain letters
 function isNameValid() {
   let nameInput = name.value;
-  return /^[a-zA-Z]+ ?[a-zA-Z]*$/.test(nameInput);
+  return /^[a-zA-Z]+ ?[a-zA-Z]* ?$/.test(nameInput);
 }
 
 //Validate "Email" field to contain letters and digits in email form
