@@ -144,14 +144,17 @@ function isCvvValid() {
 
 //Add an event listener to prevent invalid information from submitting the form
 form.addEventListener('submit', (event) => {
-  if (!isNameValid()){
-    event.p
+  if ( !isNameValid() || !isEmailValid() || !isRegisterValid() || !isCardNumberValid() || !isZipCodeValid() || !isCvvValid() ){
+    event.preventDefault();
+    event.value.parentElement.classList.add('not-valid');
+    event.value.parentElement.classList.remove('valid');
+    event.value.nextElementSibling.style.display = 'block';
+  } else {
+    event.value.parentElement.classList.add('valid');
+    event.value.parentElement.classList.remove('not-valid');
+    event.value.nextElementSibling.style.display = 'none';
   }
-
-})
-
-
-
+});
 
 /**********
   The "Accessibility" section:
