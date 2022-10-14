@@ -210,13 +210,13 @@ form.addEventListener('submit', (event) => {
     As "Register for Activities" are checkboxed, the respective selection should be in focus.
     When invalid errors on fields/sections, the corresponding field will be highlighted.
 **********/
-const activitySelect = document.querySelectorAll('input[type="checkbox"]');
+const activitySelect = document.querySelectorAll('input[type=checkbox]');
 
 for (let i=0; i < activitySelect.length; i++) {
   activitySelect[i].addEventListener('focus', (event) => {
     event.target.parentElement.classList.add('focus');
-  })
+  });
   activitySelect[i].addEventListener('blur', (event) => {
     event.target.parentElement.classList.remove('focus');
-  })
+  });
 }
